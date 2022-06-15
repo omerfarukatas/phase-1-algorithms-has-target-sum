@@ -1,11 +1,12 @@
 function hasTargetSum(array, target) {
   for (let i = 0; i < array.length; i++) {
-    const complement = target - array[i];
-    for (let j = i + 1; j < array.length; j++) {
-      if (array[j] === complement) return true
-    }
-  }
-  return false;
+    for (let j = i++; j < array.length; j++) {
+      if (array[j] === target - array[i]) {
+        return true
+      };
+    };
+    return null
+  };
 };
 
 /* 
@@ -13,14 +14,8 @@ function hasTargetSum(array, target) {
 */
 
 /* 
-  hasTargetSum([22, 19, 4, 6, 30], 25));
-  iterate thru each element
-    for the current element, find the complement number that makes
-    current + complement = target
-    iterate thru rest of the array
-      check if any number is the complemet
-      return true
-
+  loop through each element n
+  nest another loop that looks for a value equal to (target - n)
 */
 
 
